@@ -22,13 +22,3 @@ end
 # after do
 #   connection.close
 # end
-
-# get '/' do
-#   stream do |out|
-#     out << "それは伝 -\n"
-#     sleep 0.5
-#     out << " (少し待つ) \n"
-#     sleep 1
-#     out << "- 説になる！\n"
-#   end
-# end
