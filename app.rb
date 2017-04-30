@@ -17,8 +17,19 @@ get '/' do
   erb :index
 end
 
+get '/form' do
+  erb :form
+end
+
+post '/regist' do
+  name = params[:name]
+  url = params[:url]
+  connection.query("insert into items (name, url) values ('#{name}', '#{url}')")
+  erb :regist
+end
+
 get '/list' do
-  list = connection.query("select id, name, posted from items") # array
+  list = connection.query("select * from items") # array
   str = ""
   list.each do |li|
     str += li.join(", ") + "<br>"
