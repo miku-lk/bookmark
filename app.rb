@@ -30,11 +30,11 @@ end
 
 get '/list' do
   list = connection.query("select * from items") # array
-  str = ""
+  @str = ""
   list.each do |li|
-    str += li.join(", ") + "<br>"
+    @str += li.join(", ") + "<br>"
   end
-  str # print
+  erb :list
 end
 
 after do
